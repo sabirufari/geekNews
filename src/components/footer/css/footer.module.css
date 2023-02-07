@@ -1,0 +1,35 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background: #216189;
+}
+.footer_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.footer_news {
+    width: 405px;
+}
+
+.link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.footer_icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+}
