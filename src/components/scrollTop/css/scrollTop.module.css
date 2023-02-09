@@ -1,0 +1,17 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed !important;
+    right: 50px;
+    bottom: 150px;
+    cursor: pointer;
+    width: 65px ;
+    height: 65px ;
+    background-color: #216189 !important;
+    border-radius: 50% !important;
+    transition: .3s ease-in !important;
+}
+.button svg {
+    color: #fff;
+}

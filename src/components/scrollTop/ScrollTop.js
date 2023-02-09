@@ -1,38 +1,36 @@
 import React, {useState} from 'react';
 import {SwipeUp} from '@mui/icons-material';
-import {Button} from "@mui/material";
+import styles from './css/scrollTop.module.css';
+import {Link} from 'react-scroll'
 
 const ScrollTop = () => {
     const [scroll, setScroll] = useState(false);
 
-    const handleScroll = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
+    // const handleScroll = () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth'
+    //     })
+    // }
 
     window.onscroll = () => {
-        const doc = document.documentElement;
-        setScroll(doc.scrollTop >= 128);
+        const doc = document.documentElement.scrollTop;
+        setScroll(doc >= 250);
     };
+
     return (
         <>
-            {
-                scroll &&
-                <Button
-                    variant="contained"
-                    style={{
-                    position: 'fixed',
-                    right: 50,
-                    bottom: 175,
-                    width: 50,
-                    height: 50,
-                    borderRadius: '50%',
-                }}
-                    onClick={handleScroll}
-                ><SwipeUp/></Button>
-            }
+            <Link
+                to='header'
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+                className={styles.button}
+                style={scroll ? {opacity: 1, transform: 'rotate(0deg)'} : {opacity: 0, transform: 'rotate(-135deg)'}}
+            >
+                <SwipeUp/>
+            </Link>
         </>
     );
 };

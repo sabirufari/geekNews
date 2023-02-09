@@ -4,7 +4,7 @@ import axios from "axios";
 
 const initialState = {
     articles: [],
-    load: false
+    load: true
 }
 
 export const getArticles = createAsyncThunk('articles',  async () => {
@@ -20,11 +20,11 @@ const articlesSlices = createSlice({
     extraReducers(building) {
         building
             .addCase(getArticles.pending, (state) =>{
-                state.load = false;
+                state.load = true;
             })
             .addCase(getArticles.fulfilled, (state, action) => {
                 state.articles = action.payload;
-                state.load = true;
+                state.load = false;
             })
     }
 })

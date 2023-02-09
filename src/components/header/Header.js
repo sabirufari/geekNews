@@ -7,6 +7,7 @@ import {ReactComponent as Logo} from "../../media/header/logo.svg";
 import {ReactComponent as Instagram} from "../../media/header/inst.svg";
 import {ReactComponent as Facebook} from "../../media/header/faceb.svg";
 import {ReactComponent as Telegram} from "../../media/header/tg.svg";
+import SearchInput from "./searchInput";
 
 export default function Header() {
     const [input, setInput] = useState('')
@@ -16,8 +17,8 @@ export default function Header() {
     }
 
     return (
-        <header>
-            <div className={styles.menu}>
+        <header id="header">
+            <div className={styles.menu+" container"}>
                     <Link to='/'>
                         <Logo/>
                     </Link>
@@ -42,7 +43,7 @@ export default function Header() {
                                     <Link to='/' className={styles.link}>ГЛАВНАЯ СТРАНИЦА</Link>
                                 </li>
                                 <li className={styles.arrow_link}>
-                                    <Link to='/' className={styles.link}>НОВОСТИ</Link>
+                                    <span className={styles.link}>НОВОСТИ</span>
                                     <Arrow/>
                                 </li>
                                 <li>
@@ -54,7 +55,8 @@ export default function Header() {
                             </ul>
                         </div>
                         <div className={styles.search__inner}>
-                            <input type="text" value={input} onChange={handleSearch} placeholder='Поиск' className={styles.input}/>
+                            <SearchInput/>
+                            {/*<input type="text" value={input} onChange={handleSearch} placeholder='Поиск' className={styles.input}/>*/}
                             <Search className={styles.search}/>
                         </div>
                     </div>
