@@ -1,4 +1,6 @@
 
 export const links = {
-    BASE_URL: 'https://fakestoreapi.com/products'
+    BASE_URL: 'https://jsonplaceholder.typicode.com/photos'
 }
+
+// 'https://fakestoreapi.com/products'

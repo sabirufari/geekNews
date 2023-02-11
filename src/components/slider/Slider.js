@@ -3,7 +3,7 @@ import styles from './css/slider.module.css'
 import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import {Pagination} from "swiper";
+import {Pagination, Autoplay} from "swiper";
 import {useSelector} from "react-redux";
 import {articlesSelect, loadArticlesSelect} from "../../redux/slices/articlesSlices";
 import {NavLink} from "react-router-dom";
@@ -21,19 +21,19 @@ const Slider = () => {
                 ?
                 <Swiper
                     className={styles.blocks}
-                    autoplay={true}
+                    autoplay={{delay: 2000, disableOnInteraction: false}}
                     spaceBetween={30}
                     slidesPerView={3}
                     pagination={{
                         clickable: true
                     }}
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
                 >
-                    {articles.map(i => (
+                    {articles.slice(0, 15).map(i => (
                         <SwiperSlide className={styles.block} key={i.id}>
                             <NavLink to={`${i.id}`}>
                                 <div className={styles.block_img}>
-                                    <img src={i?.image} alt="" className={styles.block_image}/>
+                                    <img src={i?.url} alt="" className={styles.block_image}/>
                                 </div>
                                 <p className={styles.block_title}>{i?.title}</p>
                             </NavLink>

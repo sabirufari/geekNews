@@ -17,7 +17,7 @@ const RightNews = () => {
                     ?
                     articles.slice(3, 9).map((i) => (
                     <li key={i?.id}>
-                        <p>{i?.price}</p>
+                        <p>{i?.id}</p>
                         <Link to={`/${i?.id}`}>{i?.title}</Link>
                     </li>))
                     :

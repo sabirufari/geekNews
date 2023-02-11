@@ -7,13 +7,14 @@ import {ReactComponent as Logo} from "../../media/header/logo.svg";
 import {ReactComponent as Instagram} from "../../media/header/inst.svg";
 import {ReactComponent as Facebook} from "../../media/header/faceb.svg";
 import {ReactComponent as Telegram} from "../../media/header/tg.svg";
-import SearchInput from "./searchInput";
+import SearchInput from "./SearchInput";
 
 export default function Header() {
-    const [input, setInput] = useState('')
+    const [open, setOpen] = useState(false)
+    const arr = ['МОБИЛЬНАЯ-РАЗРАБОТКА', 'WEB-РАЗРАБОТКА', 'UX/UI-ДИЗАЙН', 'PROJECT MANAGER', 'МЕРОПРИЯТИЯ']
 
-    const handleSearch = ({target}) => {
-        setInput(target.value)
+    const handleOpen = () => {
+        setOpen(!open)
     }
 
     return (
@@ -42,21 +43,28 @@ export default function Header() {
                                 <li>
                                     <Link to='/' className={styles.link}>ГЛАВНАЯ СТРАНИЦА</Link>
                                 </li>
-                                <li className={styles.arrow_link}>
-                                    <span className={styles.link}>НОВОСТИ</span>
-                                    <Arrow/>
+                                <li className={styles.arrow_link} onClick={handleOpen}>
+                                    <span className={styles.link}>НОВОСТИ<Arrow style={open ? {transform: 'rotate(180deg)'} : {transform: 'rotate(0deg)'}}/></span>
+
+                                    {
+                                        open
+                                        &&
+                                        <ul className={styles.categories}>
+                                            {
+                                                arr.map((i, k) => (
+                                                    <li key={k}><Link to='/'>{i}</Link></li>
+                                                ))
+                                            }
+                                        </ul>
+                                    }
                                 </li>
                                 <li>
                                     <Link to='/' className={styles.link}>МУЛЬТИМЕДИА</Link>
-                                </li>
-                                <li>
-                                    <Link to='/' className={styles.link}>СТАТЬИ</Link>
                                 </li>
                             </ul>
                         </div>
                         <div className={styles.search__inner}>
                             <SearchInput/>
-                            {/*<input type="text" value={input} onChange={handleSearch} placeholder='Поиск' className={styles.input}/>*/}
                             <Search className={styles.search}/>
                         </div>
                     </div>
