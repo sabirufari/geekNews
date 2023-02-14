@@ -24,13 +24,13 @@ export default function Header() {
                         <Logo/>
                     </Link>
                     <div className={styles.icons}>
-                        <a href="#">
+                        <a target="_blank" href="https://instagram.com/geeks__edu?igshid=YmMyMTA2M2Y=">
                             <Instagram/>
                         </a>
                         <a href="#">
                             <Facebook/>
                         </a>
-                        <a href="#">
+                        <a target="_blank" href="https://t.me/joinchat/SExl8seNzNMm6aaS">
                             <Telegram/>
                         </a>
                     </div>

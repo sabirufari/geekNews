@@ -1,3 +1,7 @@
+.container {
+    margin: 72px 0 37px;
+}
+
 .title {
     font-weight: 700;
     font-size: 45px;
@@ -48,4 +52,20 @@
 .load span {
     width: 100px !important;
     height: 100px !important;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+    height: 42px;
+}
+
+.title_social {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 18px;
+    color: #606060;
 }

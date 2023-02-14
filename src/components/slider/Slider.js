@@ -1,20 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './css/slider.module.css'
 import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {Pagination, Autoplay} from "swiper";
-import {useSelector} from "react-redux";
-import {articlesSelect, loadArticlesSelect} from "../../redux/slices/articlesSlices";
+import {useDispatch, useSelector} from "react-redux";
+import {articlesSelect, getArticles, loadArticlesSelect} from "../../redux/slices/articlesSlices";
 import {NavLink} from "react-router-dom";
 import {CircularProgress} from "@mui/material";
+import {ReactComponent as Instagram} from "../../media/slider/inst.svg";
+import {ReactComponent as Facebook} from "../../media/slider/faceb.svg";
+import {ReactComponent as Telegram} from "../../media/slider/tg.svg";
 
 const Slider = () => {
     const articles = useSelector(articlesSelect);
     const load = useSelector(loadArticlesSelect)
 
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getArticles())
+    }, [dispatch])
+
     return (
-        <div className='container'>
+        <div className={styles.container}>
             <h2 className={styles.title}>Популярные новости</h2>
             {
                 !load
@@ -31,9 +40,9 @@ const Slider = () => {
                 >
                     {articles.slice(0, 15).map(i => (
                         <SwiperSlide className={styles.block} key={i.id}>
-                            <NavLink to={`${i.id}`}>
+                            <NavLink to={`/about/${i.id}`}>
                                 <div className={styles.block_img}>
-                                    <img src={i?.url} alt="" className={styles.block_image}/>
+                                    <img src={i?.image} alt="" className={styles.block_image}/>
                                 </div>
                                 <p className={styles.block_title}>{i?.title}</p>
                             </NavLink>
@@ -45,6 +54,18 @@ const Slider = () => {
                         <CircularProgress/>
                     </div>
             }
+            <p className={styles.title_social}>Поделиться в социальных сетях:</p>
+            <div className={styles.socials}>
+                <a target="_blank" href="https://instagram.com/geeks__edu?igshid=YmMyMTA2M2Y=">
+                    <Instagram/>
+                </a>
+                <a href="#">
+                    <Facebook/>
+                </a>
+                <a target="_blank" href="https://t.me/joinchat/SExl8seNzNMm6aaS">
+                    <Telegram/>
+                </a>
+            </div>
         </div>
     );
 };

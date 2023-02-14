@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import MainPage from "./pages/mainPage/MainPage";
 import Footer from "./components/footer/Footer";
 import ScrollTop from "./components/scrollTop/ScrollTop";
+import AboutPage from "./pages/aboutPage/AboutPage";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Header/>
         <Routes>
             <Route index element={<MainPage/>}/>
+            <Route path="/about/:id" element={<AboutPage/>}/>
         </Routes>
         <ScrollTop/>
         <Footer/>

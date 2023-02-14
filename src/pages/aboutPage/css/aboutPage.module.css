@@ -1,0 +1,39 @@
+.aboutPage {
+    margin-top: 65px;
+}
+
+.time {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #606060;
+}
+
+.text {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 53px;
+    color: #004DA7;
+    margin-top: 7px;
+}
+
+.box_one {
+    margin-bottom: 50px;
+}
+
+.box_img {
+    width: 976px;
+    height: 414px;
+    margin-bottom: 40px;
+}
+.img {
+    width: 976px;
+    height: 414px;
+}
+
+.box_title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
