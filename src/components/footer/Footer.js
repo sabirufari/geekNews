@@ -20,7 +20,7 @@ export default function Footer() {
                     <div className={styles.footer_news}>
                         <ul className={styles.ul}>
                             <li>
-                                <Link to='/' className={styles.link}>МУЛЬТИМЕДИА</Link>
+                                <Link to='/multiMedia' className={styles.link}>МУЛЬТИМЕДИА</Link>
                             </li>
                             <li>
                                 <Link to='/' className={styles.link}>О ПРОЕКТЕ</Link>

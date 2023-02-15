@@ -1,0 +1,38 @@
+.multiMedia {
+    margin: 25px 0;
+}
+.multi_videos{
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    gap: 96px;
+    row-gap: 37px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+.multi_title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    background: #D9D9D9;
+    padding: 5px 0 11px;
+    /*position: absolute;*/
+    /*top: 0;*/
+}
+
+.video {
+    /*position: relative;*/
+}
+
+.multi_video {
+    width: 525px;
+    /*position: relative;*/
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #216189;
+}

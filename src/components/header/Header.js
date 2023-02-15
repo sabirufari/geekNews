@@ -59,7 +59,7 @@ export default function Header() {
                                     }
                                 </li>
                                 <li>
-                                    <Link to='/' className={styles.link}>МУЛЬТИМЕДИА</Link>
+                                    <Link to='/multiMedia' className={styles.link}>МУЛЬТИМЕДИА</Link>
                                 </li>
                             </ul>
                         </div>
