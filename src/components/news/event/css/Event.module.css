@@ -1,0 +1,42 @@
+.Event {
+    margin: 25px 0;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #216189;
+}
+
+.content {
+    margin-top: 41px;
+    margin-bottom: 50px;
+}
+
+.content_date {
+    width: 157.74px;
+    height: 31.3px;
+
+    background: #EBEBEB;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20.0305px;
+    line-height: 23px;
+    color: #B6B6B6;
+}
+
+.content_text {
+    margin-top: 13px;
+    width: 103.91px;
+    height: 21.28px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #000000;
+}
